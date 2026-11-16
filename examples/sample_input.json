@@ -1,0 +1,42 @@
+{
+  "source_environment": {
+    "engine": "Microsoft SQL Server 2019 (PDSR)",
+    "table": "dbo.PATIENT_MAPPING",
+    "total_rows": 91900083,
+    "primary_key": "PATIENT_ID",
+    "distinct_keys": 66132496,
+    "schema": [
+      {"column": "PATIENT_ID", "type": "DECIMAL(18,0)", "nullable": false},
+      {"column": "OLD_NUM", "type": "VARCHAR(50)", "nullable": true},
+      {"column": "ENCOUNTER_NUM", "type": "VARCHAR(25)", "nullable": true},
+      {"column": "RECORD_TIMESTAMP", "type": "DATETIME2", "nullable": false},
+      {"column": "ACTIVE_FLAG", "type": "CHAR(1)", "nullable": false}
+    ]
+  },
+  "target_environment": {
+    "engine": "Microsoft Fabric Lakehouse (Delta)",
+    "table": "gold.patient_mapping",
+    "total_rows": 91865894,
+    "primary_key": "PATIENT_ID",
+    "distinct_keys": 66132496,
+    "schema": [
+      {"column": "PATIENT_ID", "type": "BIGINT", "nullable": false},
+      {"column": "OLD_NUM", "type": "STRING", "nullable": true},
+      {"column": "ENCOUNTER_NUM", "type": "STRING", "nullable": true},
+      {"column": "RECORD_TIMESTAMP", "type": "TIMESTAMP", "nullable": true},
+      {"column": "ACTIVE_FLAG", "type": "STRING", "nullable": true}
+    ]
+  },
+  "telemetry": {
+    "target_null_counts": {
+      "PATIENT_ID": 0,
+      "ENCOUNTER_NUM": 34189,
+      "OLD_NUM": 1205
+    },
+    "source_null_counts": {
+      "PATIENT_ID": 0,
+      "ENCOUNTER_NUM": 0,
+      "OLD_NUM": 1205
+    }
+  }
+}
